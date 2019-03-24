@@ -2,10 +2,10 @@
 FROM golang:latest
 #作者
 MAINTAINER Razil "crab"
-WORKDIR $GOPATH/src/github.com/mygohttp
+WORKDIR $GOPATH/src/github.com
 #将服务器的go工程代码加入到docker容器中
-ADD mygohttp.go $GOPATH/src/github.com/mygohttp
-ADD labstack $GOPATH/src/github.com/
+ADD . $GOPATH/src/github.com
+
 #go构建可执行文件
 RUN go build .
 #暴露端口
